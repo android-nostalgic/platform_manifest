@@ -1,116 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote  name="korg"
-           fetch="git://android.git.kernel.org/"
-           review="review.source.android.com" />
-  <default revision="release-1.0"
-           remote="korg" />
+  <remote  name="github"
+           fetch=".." />
 
-  <project path="build" name="platform/build">
+  <default revision="release-1.0"
+           remote="github"
+           sync-c="true"
+           sync-j="4" />
+
+  <project path="build" name="android-nostalgic/platform_build">
     <copyfile src="core/root.mk" dest="Makefile" />
   </project>
 
   <project path="kernel"
-           name="kernel/common"
+           name="android-nostalgic/kernel_common"
            revision="refs/heads/android-2.6.25" />
 
-  <project path="bionic" name="platform/bionic" />
-  <project path="bootloader/legacy" name="platform/bootloader/legacy" />
-  <project path="dalvik" name="platform/dalvik" />
-  <project path="development" name="platform/development" />
-  <project path="frameworks/base" name="platform/frameworks/base" />
-  <project path="frameworks/opt/com.google.android" name="platform/frameworks/opt/com.google.android" />
-  <project path="frameworks/opt/com.google.android.googlelogin" name="platform/frameworks/opt/com.google.android.googlelogin" />
-  <project path="frameworks/policies/base" name="platform/frameworks/policies/base" />
-  <project path="hardware/libhardware" name="platform/hardware/libhardware" />
-  <project path="hardware/ril" name="platform/hardware/ril" />
-  <project path="prebuilt" name="platform/prebuilt" />
-  <project path="recovery" name="platform/recovery" />
-  <project path="system/bluetooth" name="platform/system/bluetooth" />
-  <project path="system/core" name="platform/system/core" />
-  <project path="system/extras" name="platform/system/extras" />
-  <project path="system/wlan/ti" name="platform/system/wlan/ti" />
+  <project path="bionic" name="android-nostalgic/platform_bionic" />
+  <project path="bootloader/legacy" name="android-nostalgic/platform_bootloader_legacy" />
+  <project path="dalvik" name="android-nostalgic/platform_dalvik" />
+  <project path="development" name="android-nostalgic/platform_development" />
+  <project path="frameworks/base" name="android-nostalgic/platform_frameworks_base" />
+  <project path="frameworks/opt/com.google.android" name="android-nostalgic/platform_frameworks_opt_com.google.android" />
+  <project path="frameworks/opt/com.google.android.googlelogin" name="android-nostalgic/platform_frameworks_opt_com.google.android.googlelogin" />
+  <project path="frameworks/policies/base" name="android-nostalgic/platform_frameworks_policies_base" />
+  <project path="hardware/libhardware" name="android-nostalgic/platform_hardware_libhardware" />
+  <project path="hardware/ril" name="android-nostalgic/platform_hardware_ril" />
+  <project path="prebuilt" name="android-nostalgic/platform_prebuilt" />
+  <project path="recovery" name="android-nostalgic/platform_recovery" />
+  <project path="system/bluetooth" name="android-nostalgic/platform_system_bluetooth" />
+  <project path="system/core" name="android-nostalgic/platform_system_core" />
+  <project path="system/extras" name="android-nostalgic/platform_system_extras" />
+  <project path="system/wlan/ti" name="android-nostalgic/platform_system_wlan_ti" />
 
-  <project path="packages/providers/CalendarProvider" name="platform/packages/providers/CalendarProvider" />
-  <project path="packages/providers/ContactsProvider" name="platform/packages/providers/ContactsProvider" />
-  <project path="packages/providers/DownloadProvider" name="platform/packages/providers/DownloadProvider" />
-  <project path="packages/providers/DrmProvider" name="platform/packages/providers/DrmProvider" />
-  <project path="packages/providers/GoogleContactsProvider" name="platform/packages/providers/GoogleContactsProvider" />
-  <project path="packages/providers/GoogleSubscribedFeedsProvider" name="platform/packages/providers/GoogleSubscribedFeedsProvider" />
-  <project path="packages/providers/ImProvider" name="platform/packages/providers/ImProvider" />
-  <project path="packages/providers/MediaProvider" name="platform/packages/providers/MediaProvider" />
-  <project path="packages/providers/TelephonyProvider" name="platform/packages/providers/TelephonyProvider" />
+  <project path="packages/providers/CalendarProvider" name="android-nostalgic/platform_packages_providers_CalendarProvider" />
+  <project path="packages/providers/ContactsProvider" name="android-nostalgic/platform_packages_providers_ContactsProvider" />
+  <project path="packages/providers/DownloadProvider" name="android-nostalgic/platform_packages_providers_DownloadProvider" />
+  <project path="packages/providers/DrmProvider" name="android-nostalgic/platform_packages_providers_DrmProvider" />
+  <project path="packages/providers/GoogleContactsProvider" name="android-nostalgic/platform_packages_providers_GoogleContactsProvider" />
+  <project path="packages/providers/GoogleSubscribedFeedsProvider" name="android-nostalgic/platform_packages_providers_GoogleSubscribedFeedsProvider" />
+  <project path="packages/providers/ImProvider" name="android-nostalgic/platform_packages_providers_ImProvider" />
+  <project path="packages/providers/MediaProvider" name="android-nostalgic/platform_packages_providers_MediaProvider" />
+  <project path="packages/providers/TelephonyProvider" name="android-nostalgic/platform_packages_providers_TelephonyProvider" />
 
-  <project path="packages/apps/AlarmClock" name="platform/packages/apps/AlarmClock" />
-  <project path="packages/apps/Browser" name="platform/packages/apps/Browser" />
-  <project path="packages/apps/Calculator" name="platform/packages/apps/Calculator" />
-  <project path="packages/apps/Calendar" name="platform/packages/apps/Calendar" />
-  <project path="packages/apps/Camera" name="platform/packages/apps/Camera" />
-  <project path="packages/apps/Contacts" name="platform/packages/apps/Contacts" />
-  <project path="packages/apps/Email" name="platform/packages/apps/Email" />
-  <project path="packages/apps/GoogleSearch" name="platform/packages/apps/GoogleSearch" />
-  <project path="packages/apps/HTMLViewer" name="platform/packages/apps/HTMLViewer" />
-  <project path="packages/apps/IM" name="platform/packages/apps/IM" />
-  <project path="packages/apps/Launcher" name="platform/packages/apps/Launcher" />
-  <project path="packages/apps/Mms" name="platform/packages/apps/Mms" />
-  <project path="packages/apps/Music" name="platform/packages/apps/Music" />
-  <project path="packages/apps/PackageInstaller" name="platform/packages/apps/PackageInstaller" />
-  <project path="packages/apps/Phone" name="platform/packages/apps/Phone" />
-  <project path="packages/apps/Settings" name="platform/packages/apps/Settings" />
-  <project path="packages/apps/SoundRecorder" name="platform/packages/apps/SoundRecorder" />
-  <project path="packages/apps/Stk" name="platform/packages/apps/Stk" />
-  <project path="packages/apps/Sync" name="platform/packages/apps/Sync" />
-  <project path="packages/apps/Updater" name="platform/packages/apps/Updater" />
-  <project path="packages/apps/VoiceDialer" name="platform/packages/apps/VoiceDialer" />
+  <project path="packages/apps/AlarmClock" name="android-nostalgic/platform_packages_apps_AlarmClock" />
+  <project path="packages/apps/Browser" name="android-nostalgic/platform_packages_apps_Browser" />
+  <project path="packages/apps/Calculator" name="android-nostalgic/platform_packages_apps_Calculator" />
+  <project path="packages/apps/Calendar" name="android-nostalgic/platform_packages_apps_Calendar" />
+  <project path="packages/apps/Camera" name="android-nostalgic/platform_packages_apps_Camera" />
+  <project path="packages/apps/Contacts" name="android-nostalgic/platform_packages_apps_Contacts" />
+  <project path="packages/apps/Email" name="android-nostalgic/platform_packages_apps_Email" />
+  <project path="packages/apps/GoogleSearch" name="android-nostalgic/platform_packages_apps_GoogleSearch" />
+  <project path="packages/apps/HTMLViewer" name="android-nostalgic/platform_packages_apps_HTMLViewer" />
+  <project path="packages/apps/IM" name="android-nostalgic/platform_packages_apps_IM" />
+  <project path="packages/apps/Launcher" name="android-nostalgic/platform_packages_apps_Launcher" />
+  <project path="packages/apps/Mms" name="android-nostalgic/platform_packages_apps_Mms" />
+  <project path="packages/apps/Music" name="android-nostalgic/platform_packages_apps_Music" />
+  <project path="packages/apps/PackageInstaller" name="android-nostalgic/platform_packages_apps_PackageInstaller" />
+  <project path="packages/apps/Phone" name="android-nostalgic/platform_packages_apps_Phone" />
+  <project path="packages/apps/Settings" name="android-nostalgic/platform_packages_apps_Settings" />
+  <project path="packages/apps/SoundRecorder" name="android-nostalgic/platform_packages_apps_SoundRecorder" />
+  <project path="packages/apps/Stk" name="android-nostalgic/platform_packages_apps_Stk" />
+  <project path="packages/apps/Sync" name="android-nostalgic/platform_packages_apps_Sync" />
+  <project path="packages/apps/Updater" name="android-nostalgic/platform_packages_apps_Updater" />
+  <project path="packages/apps/VoiceDialer" name="android-nostalgic/platform_packages_apps_VoiceDialer" />
 
-  <project path="external/aes" name="platform/external/aes" />
-  <project path="external/apache-http" name="platform/external/apache-http" />
-  <project path="external/bluez" name="platform/external/bluez" />
-  <project path="external/clearsilver" name="platform/external/clearsilver" />
-  <project path="external/dbus" name="platform/external/dbus" />
-  <project path="external/dhcpcd" name="platform/external/dhcpcd" />
-  <project path="external/dropbear" name="platform/external/dropbear" />
-  <project path="external/elfcopy" name="platform/external/elfcopy" />
-  <project path="external/elfutils" name="platform/external/elfutils" />
-  <project path="external/emma" name="platform/external/emma" />
-  <project path="external/esd" name="platform/external/esd" />
-  <project path="external/expat" name="platform/external/expat" />
-  <project path="external/fdlibm" name="platform/external/fdlibm" />
-  <project path="external/freetype" name="platform/external/freetype" />
-  <project path="external/gdata" name="platform/external/gdata" />
-  <project path="external/giflib" name="platform/external/giflib" />
-  <project path="external/googleclient" name="platform/external/googleclient" />
-  <project path="external/icu4c" name="platform/external/icu4c" />
-  <project path="external/iptables" name="platform/external/iptables" />
-  <project path="external/jdiff" name="platform/external/jdiff" />
-  <project path="external/jhead" name="platform/external/jhead" />
-  <project path="external/jpeg" name="platform/external/jpeg" />
-  <project path="external/libffi" name="platform/external/libffi" />
-  <project path="external/libpcap" name="platform/external/libpcap" />
-  <project path="external/libpng" name="platform/external/libpng" />
-  <project path="external/libxml2" name="platform/external/libxml2" />
-  <project path="external/netcat" name="platform/external/netcat" />
-  <project path="external/netperf" name="platform/external/netperf" />
-  <project path="external/neven" name="platform/external/neven" />
-  <project path="external/opencore" name="platform/external/opencore" />
-  <project path="external/openssl" name="platform/external/openssl" />
-  <project path="external/oprofile" name="platform/external/oprofile" />
-  <project path="external/ping" name="platform/external/ping" />
-  <project path="external/ppp" name="platform/external/ppp" />
-  <project path="external/protobuf" name="platform/external/protobuf" />
-  <project path="external/qemu" name="platform/external/qemu" />
-  <project path="external/safe-iop" name="platform/external/safe-iop" />
-  <project path="external/skia" name="platform/external/skia" />
-  <project path="external/sonivox" name="platform/external/sonivox" />
-  <project path="external/sqlite" name="platform/external/sqlite" />
-  <project path="external/srec" name="platform/external/srec" />
-  <project path="external/strace" name="platform/external/strace" />
-  <project path="external/tagsoup" name="platform/external/tagsoup" />
-  <project path="external/tcpdump" name="platform/external/tcpdump" />
-  <project path="external/tinyxml" name="platform/external/tinyxml" />
-  <project path="external/tremor" name="platform/external/tremor" />
-  <project path="external/webkit" name="platform/external/webkit" />
-  <project path="external/wpa_supplicant" name="platform/external/wpa_supplicant" />
-  <project path="external/yaffs2" name="platform/external/yaffs2" />
-  <project path="external/zlib" name="platform/external/zlib" />
+  <project path="external/aes" name="android-nostalgic/platform_external_aes" />
+  <project path="external/apache-http" name="android-nostalgic/platform_external_apache-http" />
+  <project path="external/bluez" name="android-nostalgic/platform_external_bluez" />
+  <project path="external/clearsilver" name="android-nostalgic/platform_external_clearsilver" />
+  <project path="external/dbus" name="android-nostalgic/platform_external_dbus" />
+  <project path="external/dhcpcd" name="android-nostalgic/platform_external_dhcpcd" />
+  <project path="external/dropbear" name="android-nostalgic/platform_external_dropbear" />
+  <project path="external/elfcopy" name="android-nostalgic/platform_external_elfcopy" />
+  <project path="external/elfutils" name="android-nostalgic/platform_external_elfutils" />
+  <project path="external/emma" name="android-nostalgic/platform_external_emma" />
+  <project path="external/esd" name="android-nostalgic/platform_external_esd" />
+  <project path="external/expat" name="android-nostalgic/platform_external_expat" />
+  <project path="external/fdlibm" name="android-nostalgic/platform_external_fdlibm" />
+  <project path="external/freetype" name="android-nostalgic/platform_external_freetype" />
+  <project path="external/gdata" name="android-nostalgic/platform_external_gdata" />
+  <project path="external/giflib" name="android-nostalgic/platform_external_giflib" />
+  <project path="external/googleclient" name="android-nostalgic/platform_external_googleclient" />
+  <project path="external/icu4c" name="android-nostalgic/platform_external_icu4c" />
+  <project path="external/iptables" name="android-nostalgic/platform_external_iptables" />
+  <project path="external/jdiff" name="android-nostalgic/platform_external_jdiff" />
+  <project path="external/jhead" name="android-nostalgic/platform_external_jhead" />
+  <project path="external/jpeg" name="android-nostalgic/platform_external_jpeg" />
+  <project path="external/libffi" name="android-nostalgic/platform_external_libffi" />
+  <project path="external/libpcap" name="android-nostalgic/platform_external_libpcap" />
+  <project path="external/libpng" name="android-nostalgic/platform_external_libpng" />
+  <project path="external/libxml2" name="android-nostalgic/platform_external_libxml2" />
+  <project path="external/netcat" name="android-nostalgic/platform_external_netcat" />
+  <project path="external/netperf" name="android-nostalgic/platform_external_netperf" />
+  <project path="external/neven" name="android-nostalgic/platform_external_neven" />
+  <project path="external/opencore" name="android-nostalgic/platform_external_opencore" />
+  <project path="external/openssl" name="android-nostalgic/platform_external_openssl" />
+  <project path="external/oprofile" name="android-nostalgic/platform_external_oprofile" />
+  <project path="external/ping" name="android-nostalgic/platform_external_ping" />
+  <project path="external/ppp" name="android-nostalgic/platform_external_ppp" />
+  <project path="external/protobuf" name="android-nostalgic/platform_external_protobuf" />
+  <project path="external/qemu" name="android-nostalgic/platform_external_qemu" />
+  <project path="external/safe-iop" name="android-nostalgic/platform_external_safe-iop" />
+  <project path="external/skia" name="android-nostalgic/platform_external_skia" />
+  <project path="external/sonivox" name="android-nostalgic/platform_external_sonivox" />
+  <project path="external/sqlite" name="android-nostalgic/platform_external_sqlite" />
+  <project path="external/srec" name="android-nostalgic/platform_external_srec" />
+  <project path="external/strace" name="android-nostalgic/platform_external_strace" />
+  <project path="external/tagsoup" name="android-nostalgic/platform_external_tagsoup" />
+  <project path="external/tcpdump" name="android-nostalgic/platform_external_tcpdump" />
+  <project path="external/tinyxml" name="android-nostalgic/platform_external_tinyxml" />
+  <project path="external/tremor" name="android-nostalgic/platform_external_tremor" />
+  <project path="external/webkit" name="android-nostalgic/platform_external_webkit" />
+  <project path="external/wpa_supplicant" name="android-nostalgic/platform_external_wpa_supplicant" />
+  <project path="external/yaffs2" name="android-nostalgic/platform_external_yaffs2" />
+  <project path="external/zlib" name="android-nostalgic/platform_external_zlib" />
 </manifest>
